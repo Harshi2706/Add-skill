@@ -1,0 +1,16 @@
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        m = {}
+        size=len(nums)
+        for i in range(size):
+            if nums[i] in m:
+                m[nums[i]] += 1
+            else:
+                m[nums[i]] = 1
+        count = 0
+        for key in m:
+            if m[key] > size / 2:
+                count = 1
+                return key
+                break
+        
